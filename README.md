@@ -2,7 +2,7 @@
 
 **An all-in-one Telegram analytics agent for NEAR memecoins** — token scanner, wallet PnL inspector, live memepad alerts, a new-deploys feed with dev history, and caller tracking with PnL cards.
 
-Live bot: [@nearai_agent](https://t.me/nearai_agent) · 🇷🇺 [README на русском](README.ru.md)
+**Try it live:** bot [@nearai_agent](https://t.me/nearai_agent) · utility chat with alerts [t.me/neardegen](https://t.me/neardegen) · new deploys channel [t.me/neardeploys](https://t.me/neardeploys) · 🇷🇺 [README на русском](README.ru.md)
 
 Built for NEAR HACKATHON — tracks: *Memecoins With Mechanics*, *Agent Economy*, *Open Innovation*.
 
