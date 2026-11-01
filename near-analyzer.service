@@ -1,0 +1,12 @@
+[Unit]
+Description=NEAR Analyzer Telegram bot
+After=network-online.target
+
+[Service]
+WorkingDirectory=/root/near-analyzer-bot
+ExecStart=/root/near-analyzer-bot/venv/bin/python /root/near-analyzer-bot/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
