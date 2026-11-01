@@ -4,7 +4,7 @@
 
 **Try it live:** bot [@nearai_agent](https://t.me/nearai_agent) · utility chat with alerts [t.me/neardegen](https://t.me/neardegen) · new deploys channel [t.me/neardeploys](https://t.me/neardeploys) · 🇷🇺 [README на русском](README.ru.md)
 
-Built for NEAR HACKATHON — tracks: *Memecoins With Mechanics*, *Agent Economy*, *Open Innovation*.
+Built for NEAR HACKATHON — tracks: *Memecoins With Mechanics*, *Agent Economy*, *Open Innovation*. The main product of a three-bot toolkit, see [Toolkit](#toolkit).
 
 ---
 
@@ -104,6 +104,18 @@ Updates afterwards: `analyzer-update`.
 ### Configuration
 
 All settings live in `.env` (see [`.env.example`](.env.example)): poll interval, MC levels (`MCAP_LEVELS`), dip threshold (`DIP_PCT`), digest time and timezone, deploys channel, referral code, optional FastNear / twitterapi.io keys.
+
+## Toolkit
+
+Three open-source Telegram tools for NEAR memecoin traders, each in its own repo:
+
+| Tool | Live | Repo |
+|---|---|---|
+| **NEAR Analyzer** — token scanner, wallet PnL, memepad alerts, new deploys feed, caller PnL | [@nearai_agent](https://t.me/nearai_agent) · [chat](https://t.me/neardegen) · [deploys](https://t.me/neardeploys) | this repo |
+| **NEAR DEX Alerts** — volume spikes, pumps, dumps and pump & dumps across NEAR DEXes | [@nearaidex_bot](https://t.me/nearaidex_bot) | [near-dex-bot](https://github.com/LoveTon-crypto/near-dex-bot) |
+| **NEAR Wallet Tracker** — real-time activity of named wallets | [@nearwallettrack_bot](https://t.me/nearwallettrack_bot) | [near-wallet-tracker](https://github.com/LoveTon-crypto/near-wallet-tracker) |
+
+The analyzer answers *"what is this token / wallet?"*, the DEX bot answers *"what is moving right now?"*, and the tracker answers *"what are the wallets I follow doing?"*.
 
 ## Roadmap
 
