@@ -69,7 +69,7 @@ cp .env.example .env        # then put your BOT_TOKEN in .env
 venv/bin/python bot.py
 ```
 
-Then open your bot in Telegram, send `/start` (the first user to do so becomes the owner/admin), and paste any NEAR token contract — e.g. `justai.nearlytrade.near` — to get a scan.
+Then open your bot in Telegram, send `/start` (the first user to do so becomes the owner/admin), and paste any NEAR token contract — e.g. `batman-4.nearlytrade.near` — to get a scan.
 
 `cairosvg` needs the system Cairo library for SVG token icons (`apt install libcairo2` on Debian/Ubuntu).
 

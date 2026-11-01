@@ -460,7 +460,7 @@ async def discover_pad_tokens(ctx):
 
 ONCHAIN_DAYS = int(os.environ.get("ONCHAIN_DAYS", "7"))
 # Memepad tokens always watched and listed in /top, even if DexScreener search never surfaced them
-PAD_EXTRA = [x.strip() for x in os.environ.get("PAD_EXTRA", "justai.nearlytrade.near").split(",") if x.strip()]
+PAD_EXTRA = [x.strip() for x in os.environ.get("PAD_EXTRA", "").split(",") if x.strip()]
 ONCHAIN_PROBES = int(os.environ.get("ONCHAIN_PROBES", "3"))   # new pool lookups per minute
 
 
@@ -808,7 +808,7 @@ async def cmd_padadd(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         return
     msg = update.effective_message
     if not ctx.args:
-        await msg.reply_html("Usage: <code>/padadd justai.nearlytrade.near</code>")
+        await msg.reply_html("Usage: <code>/padadd batman-4.nearlytrade.near</code>")
         return
     out = []
     for a in ctx.args:
@@ -1001,7 +1001,7 @@ async def cmd_topcheck(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     if not is_owner(update):
         return
     msg = update.effective_message
-    a = (ctx.args[0] if ctx.args else "justai.nearlytrade.near").strip().lower()
+    a = (ctx.args[0] if ctx.args else "batman-4.nearlytrade.near").strip().lower()
     lines = [f"🔎 <code>{html.escape(a)}</code>",
              "pad_tokens: " + ("✅ yes" if store.q("SELECT 1 FROM pad_tokens WHERE address=?", (a,)) else "❌ no"),
              "PAD_EXTRA: " + ("✅ yes" if a in PAD_EXTRA else "—")]
