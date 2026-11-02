@@ -76,7 +76,7 @@ def factory_of(account: str) -> str | None:
     return None
 
 
-NDBOT_BOT = os.environ.get("NDBOT_BOT", "NDbot").lstrip("@")   # our own trade bot
+NDBOT_BOT = os.environ.get("NDBOT_BOT", "ndegen_bot").lstrip("@")   # our own trade bot
 NDBOT_REF = os.environ.get("NDBOT_REF", "").strip()             # owner's referral code in NDbot (🤝 Referrals)
 
 
