@@ -5,6 +5,7 @@
 **Try it live:** bot [@nearai_agent](https://t.me/nearai_agent) · utility chat with alerts [t.me/neardegen](https://t.me/neardegen) · new deploys channel [t.me/neardeploys](https://t.me/neardeploys) · 🇷🇺 [README на русском](README.ru.md)
 
 Built for NEAR HACKATHON — tracks: *Memecoins With Mechanics*, *Agent Economy*, *Open Innovation*. The main product of a three-bot toolkit, see [Toolkit](#toolkit).
+Second project of the same author: **[NDBOT — NEAR trading bot](https://github.com/LoveTon-crypto/near-trade-bot)** ([@ndegen_bot](https://t.me/ndegen_bot)) — the execution side: one-tap trading, deployer sniper, copytrade, limit orders. Every analyzer alert links to it.
 
 ---
 
@@ -26,7 +27,7 @@ NEAR memecoins launch on memepads like **nearly.trade** and **JustHoot**, but tr
 | Ⓝ **NEAR price** | $NEAR price with 1D / 7D / 30D candle chart | `/near` |
 | 🐦 **X watcher** (optional) | Reposts tweets from chosen accounts into a topic | `/xadd <handle>` (needs twitterapi.io key) |
 
-Every alert has **🔎 Scan** and **🟢 Buy on Bettear** buttons, so a user goes from signal to analysis to trade in two taps.
+Every alert has **🔎 Scan**, **🟢 Buy on Bettear** and **⚡ Buy on NDbot** buttons, so a user goes from signal to analysis to trade in two taps. ⚡ opens [NDBOT](https://github.com/LoveTon-crypto/near-trade-bot) — our own NEAR trading bot, a separate hackathon project — straight on the token card.
 
 ## How it works
 
@@ -117,8 +118,10 @@ Three open-source Telegram tools for NEAR memecoin traders, each in its own repo
 
 The analyzer answers *"what is this token / wallet?"*, the DEX bot answers *"what is moving right now?"*, and the tracker answers *"what are the wallets I follow doing?"*.
 
+To act on any of it, the companion project **[NDBOT](https://github.com/LoveTon-crypto/near-trade-bot)** ([@ndegen_bot](https://t.me/ndegen_bot)) trades NEAR memecoins in Telegram: one-tap buy/sell over Ref and Ref DCL, deployer sniper for nearly.trade and JustHoot, copytrade, limit orders with TP/SL and PnL cards. It is submitted to NEAR HACKATHON as a separate project.
+
 ## Roadmap
 
 - On-chain bonding progress once memepads expose curve data
-- Copy-trade and sniper actions directly from alerts
+- Add a dev to the NDBOT sniper straight from a deploys-channel post
 - Smart-money wallet labels from caller and wallet PnL history
