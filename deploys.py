@@ -76,6 +76,24 @@ def factory_of(account: str) -> str | None:
     return None
 
 
+NDBOT_BOT = os.environ.get("NDBOT_BOT", "NDbot").lstrip("@")   # our own trade bot
+NDBOT_REF = os.environ.get("NDBOT_REF", "").strip()             # owner's referral code in NDbot (🤝 Referrals)
+
+
+def ndbot_link(token: str) -> str:
+    """NDbot deep link: opens the token card ready to buy; with the owner's referral code if it fits in 64 chars."""
+    t = token.replace(".", "=")
+    for param in ((f"r{NDBOT_REF}_c{t}" if NDBOT_REF else ""), f"c{t}", (f"r{NDBOT_REF}" if NDBOT_REF else "")):
+        if param and START_OK.match(param):
+            return f"https://t.me/{NDBOT_BOT}?start={param}"
+    return f"https://t.me/{NDBOT_BOT}"
+
+
+def buy_buttons(token: str) -> list:
+    return [InlineKeyboardButton("🟢 Buy on Bettear", url=buy_link(token)),
+            InlineKeyboardButton("⚡ Buy on NDbot", url=ndbot_link(token))]
+
+
 def buy_link(token: str) -> str:
     """Bettear deep link with the referral code: dots in the contract become '='."""
     param = f"{BETTEAR_REF}-buy-{token.replace('.', '=')}"
@@ -737,9 +755,9 @@ class DeployFeed:
             lines.append("└ unknown")
 
         key = self.store.scan_key(token)
-        kb_rows = [[InlineKeyboardButton("🟢 Buy on Bettear", url=buy_link(token)),
-                    InlineKeyboardButton({"NEARLY": "Nearly", "JUSTHOOT": "JustHoot"}.get(label, label.title()), url=page_tpl.format(a=token))]]
-        second = []
+        kb_rows = [buy_buttons(token)]
+        second = [InlineKeyboardButton({"NEARLY": "Nearly", "JUSTHOOT": "JustHoot"}.get(label, label.title()),
+                                       url=page_tpl.format(a=token))]
         if bot_username:
             second.append(InlineKeyboardButton("🔎 Scan", url=f"https://t.me/{bot_username}?start=sc_{key}"))
         if dev:

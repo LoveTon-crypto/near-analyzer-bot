@@ -265,7 +265,7 @@ def alert_keyboard(token: str, item: dict, pair: dict | None) -> InlineKeyboardM
     pad = pad_of(token)
     if pad:
         row.append(InlineKeyboardButton(pad[0], url=pad[1].format(a=token)))
-    buy = [InlineKeyboardButton("🟢 Buy on Bettear", url=deploys.buy_link(token))]
+    buy = deploys.buy_buttons(token)
     return InlineKeyboardMarkup([buy, row, [InlineKeyboardButton("🔎 Scan", callback_data="sc:" + store.scan_key(token))]])
 
 
@@ -651,7 +651,7 @@ def card_keyboard(c: TokenCard, has_call: bool = False) -> InlineKeyboardMarkup:
     second = [InlineKeyboardButton("🔄 Refresh", callback_data="rf:" + key)]
     if has_call:
         second.append(InlineKeyboardButton("📊 PnL", callback_data="pnl:" + key))
-    buy = [InlineKeyboardButton("🟢 Buy on Bettear", url=deploys.buy_link(c.address))]
+    buy = deploys.buy_buttons(c.address)
     return InlineKeyboardMarkup([buy, row, second])
 
 
